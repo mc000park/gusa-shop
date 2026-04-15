@@ -1,0 +1,231 @@
+2026-04-13T00:34:00.096+09:00  INFO 85371 --- [apex] [main] com.gusa.apex.ApexApplication            : Starting ApexApplication using Java 21.0.10 with PID 85371 (/Users/del_mc/Documents/project_01/gusa/apex/build/classes/java/main started by del_mc in /Users/del_mc/Documents/project_01/gusa/apex)
+2026-04-13T00:34:00.099+09:00 DEBUG 85371 --- [apex] [main] com.gusa.apex.ApexApplication            : Running with Spring Boot v4.0.4, Spring v7.0.6
+2026-04-13T00:34:00.100+09:00  INFO 85371 --- [apex] [main] com.gusa.apex.ApexApplication            : The following 1 profile is active: "dev"
+2026-04-13T00:34:00.522+09:00  INFO 85371 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T00:34:00.613+09:00  INFO 85371 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2026-04-13T00:34:00.912+09:00  INFO 85371 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-13T00:34:00.929+09:00  INFO 85371 --- [apex] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T00:34:00.930+09:00  INFO 85371 --- [apex] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-13T00:34:00.973+09:00  INFO 85371 --- [apex] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 850 ms
+2026-04-13T00:34:01.064+09:00  INFO 85371 --- [apex] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-13T00:34:01.096+09:00  INFO 85371 --- [apex] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-13T00:34:01.306+09:00  INFO 85371 --- [apex] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T00:34:01.324+09:00  INFO 85371 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T00:34:01.412+09:00  INFO 85371 --- [apex] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:gusa-dev user=SA
+2026-04-13T00:34:01.413+09:00  INFO 85371 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T00:34:01.445+09:00  INFO 85371 --- [apex] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:gusa-dev]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: GUSA-DEV/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-13T00:34:02.068+09:00  INFO 85371 --- [apex] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T00:34:02.070+09:00  INFO 85371 --- [apex] [main] org.hibernate.orm.jdbc.batch             : HHH100501: Automatic JDBC statement batching enabled (maximum batch size 20)
+2026-04-13T00:34:02.110+09:00  INFO 85371 --- [apex] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T00:34:02.149+09:00  INFO 85371 --- [apex] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-13T00:34:02.774+09:00 DEBUG 85371 --- [apex] [main] com.gusa.apex.security.jwt.JwtFilter     : Filter 'jwtFilter' configured for use
+2026-04-13T00:34:02.806+09:00  INFO 85371 --- [apex] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+2026-04-13T00:34:03.377+09:00  INFO 85371 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T00:34:03.381+09:00  INFO 85371 --- [apex] [main] com.gusa.apex.ApexApplication            : Started ApexApplication in 3.537 seconds (process running for 3.84)
+2026-04-13T00:34:03.558+09:00  INFO 85371 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 관리자 계정 생성 완료 — ID: admin / PW: admin1234
+2026-04-13T00:34:03.641+09:00  INFO 85371 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 테스트 계정 생성 완료 — ID: admin / PW: test1234
+2026-04-13T00:34:03.758+09:00  INFO 85371 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 회원 10 명 생성 완료
+2026-04-13T00:34:03.769+09:00  INFO 85371 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 상품 15개 등록 완료
+2026-04-13T00:34:03.801+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=2504f75702cc44b9851c userId=test
+2026-04-13T00:34:03.811+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=2504f75702cc44b9851c status=PAID
+2026-04-13T00:34:03.817+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=2504f75702cc44b9851c status=SHIPPING
+2026-04-13T00:34:03.819+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=2504f75702cc44b9851c status=DELIVERED
+2026-04-13T00:34:03.822+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=1080aaa0da984041aac8 userId=test
+2026-04-13T00:34:03.824+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=1080aaa0da984041aac8 status=PAID
+2026-04-13T00:34:03.826+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=1080aaa0da984041aac8 status=SHIPPING
+2026-04-13T00:34:03.830+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=4f50b11a879841a4aed2 userId=test
+2026-04-13T00:34:03.831+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=4f50b11a879841a4aed2 status=PAID
+2026-04-13T00:34:03.834+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=b69049bc3ebe4374b6fe userId=test
+2026-04-13T00:34:03.836+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=9ee785b856aa48498482 userId=test
+2026-04-13T00:34:03.837+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=9ee785b856aa48498482 status=CANCELED
+2026-04-13T00:34:03.840+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=e9f13d2e973047cc977e userId=GUEST
+2026-04-13T00:34:03.842+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=e9f13d2e973047cc977e status=PAID
+2026-04-13T00:34:03.844+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=e9f13d2e973047cc977e status=SHIPPING
+2026-04-13T00:34:03.846+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=e9f13d2e973047cc977e status=DELIVERED
+2026-04-13T00:34:03.848+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=b0fce6b35c8a4d3c9853 userId=GUEST
+2026-04-13T00:34:03.850+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=b0fce6b35c8a4d3c9853 status=PAID
+2026-04-13T00:34:03.852+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=b0fce6b35c8a4d3c9853 status=SHIPPING
+2026-04-13T00:34:03.854+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=78b3a8f5ce9b4ca981c4 userId=GUEST
+2026-04-13T00:34:03.856+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=78b3a8f5ce9b4ca981c4 status=PAID
+2026-04-13T00:34:03.860+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=29605ad9e64845d595e2 userId=GUEST
+2026-04-13T00:34:03.863+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=3b991fe7a80d428ab61c userId=test
+2026-04-13T00:34:03.865+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=3b991fe7a80d428ab61c status=PAID
+2026-04-13T00:34:03.866+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=3b991fe7a80d428ab61c status=SHIPPING
+2026-04-13T00:34:03.868+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=3b991fe7a80d428ab61c status=DELIVERED
+2026-04-13T00:34:03.871+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=cf1e1814adb84840b6e4 userId=test
+2026-04-13T00:34:03.873+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=cf1e1814adb84840b6e4 status=PAID
+2026-04-13T00:34:03.876+09:00  INFO 85371 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=054aa6bbcec047808185 userId=GUEST
+2026-04-13T00:34:03.877+09:00  INFO 85371 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 주문 12건 생성 완료
+2026-04-13T00:34:15.375+09:00  INFO 85371 --- [apex] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T00:34:15.375+09:00  INFO 85371 --- [apex] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T00:34:15.376+09:00  INFO 85371 --- [apex] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-13T00:38:10.067+09:00  INFO 85371 --- [apex] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-13T00:38:10.075+09:00  INFO 85371 --- [apex] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-13T00:38:10.094+09:00  INFO 85371 --- [apex] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T00:38:10.096+09:00  INFO 85371 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T00:38:10.097+09:00  INFO 85371 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T00:38:15.504+09:00  INFO 86676 --- [apex] [main] com.gusa.apex.ApexApplication            : Starting ApexApplication using Java 21.0.10 with PID 86676 (/Users/del_mc/Documents/project_01/gusa/apex/build/classes/java/main started by del_mc in /Users/del_mc/Documents/project_01/gusa/apex)
+2026-04-13T00:38:15.506+09:00 DEBUG 86676 --- [apex] [main] com.gusa.apex.ApexApplication            : Running with Spring Boot v4.0.4, Spring v7.0.6
+2026-04-13T00:38:15.506+09:00  INFO 86676 --- [apex] [main] com.gusa.apex.ApexApplication            : The following 1 profile is active: "dev"
+2026-04-13T00:38:15.952+09:00  INFO 86676 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T00:38:16.035+09:00  INFO 86676 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 6 JPA repository interfaces.
+2026-04-13T00:38:16.347+09:00  INFO 86676 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-13T00:38:16.354+09:00  INFO 86676 --- [apex] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T00:38:16.355+09:00  INFO 86676 --- [apex] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-13T00:38:16.385+09:00  INFO 86676 --- [apex] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 857 ms
+2026-04-13T00:38:16.476+09:00  INFO 86676 --- [apex] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-13T00:38:16.505+09:00  INFO 86676 --- [apex] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-13T00:38:16.716+09:00  INFO 86676 --- [apex] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T00:38:16.731+09:00  INFO 86676 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T00:38:16.812+09:00  INFO 86676 --- [apex] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:gusa-dev user=SA
+2026-04-13T00:38:16.813+09:00  INFO 86676 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T00:38:16.843+09:00  INFO 86676 --- [apex] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:gusa-dev]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: GUSA-DEV/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-13T00:38:17.425+09:00  INFO 86676 --- [apex] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T00:38:17.427+09:00  INFO 86676 --- [apex] [main] org.hibernate.orm.jdbc.batch             : HHH100501: Automatic JDBC statement batching enabled (maximum batch size 20)
+2026-04-13T00:38:17.468+09:00  INFO 86676 --- [apex] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T00:38:17.505+09:00  INFO 86676 --- [apex] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-13T00:38:18.121+09:00 DEBUG 86676 --- [apex] [main] com.gusa.apex.security.jwt.JwtFilter     : Filter 'jwtFilter' configured for use
+2026-04-13T00:38:18.151+09:00  INFO 86676 --- [apex] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+2026-04-13T00:38:18.707+09:00  INFO 86676 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T00:38:18.711+09:00  INFO 86676 --- [apex] [main] com.gusa.apex.ApexApplication            : Started ApexApplication in 3.435 seconds (process running for 3.7)
+2026-04-13T00:38:18.881+09:00  INFO 86676 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 관리자 계정 생성 완료 — ID: admin / PW: admin1234
+2026-04-13T00:38:18.958+09:00  INFO 86676 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 테스트 계정 생성 완료 — ID: admin / PW: test1234
+2026-04-13T00:38:19.070+09:00  INFO 86676 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 회원 10 명 생성 완료
+2026-04-13T00:38:19.080+09:00  INFO 86676 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 상품 15개 등록 완료
+2026-04-13T00:38:19.102+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=8a02db3f956a499cacdf userId=test
+2026-04-13T00:38:19.112+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=8a02db3f956a499cacdf status=PAID
+2026-04-13T00:38:19.117+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=8a02db3f956a499cacdf status=SHIPPING
+2026-04-13T00:38:19.119+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=8a02db3f956a499cacdf status=DELIVERED
+2026-04-13T00:38:19.123+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=4390a15c33674ccc8d33 userId=test
+2026-04-13T00:38:19.125+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=4390a15c33674ccc8d33 status=PAID
+2026-04-13T00:38:19.127+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=4390a15c33674ccc8d33 status=SHIPPING
+2026-04-13T00:38:19.130+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=aea13751eecd4461bac9 userId=test
+2026-04-13T00:38:19.132+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=aea13751eecd4461bac9 status=PAID
+2026-04-13T00:38:19.135+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=4f7c9295d22d42e69af3 userId=test
+2026-04-13T00:38:19.136+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=a63f0a6f1b194b8887fc userId=test
+2026-04-13T00:38:19.137+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=a63f0a6f1b194b8887fc status=CANCELED
+2026-04-13T00:38:19.140+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=652b643dbf4b40c989d2 userId=GUEST
+2026-04-13T00:38:19.142+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=652b643dbf4b40c989d2 status=PAID
+2026-04-13T00:38:19.144+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=652b643dbf4b40c989d2 status=SHIPPING
+2026-04-13T00:38:19.146+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=652b643dbf4b40c989d2 status=DELIVERED
+2026-04-13T00:38:19.149+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=617afbaa32ec4783a407 userId=GUEST
+2026-04-13T00:38:19.150+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=617afbaa32ec4783a407 status=PAID
+2026-04-13T00:38:19.152+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=617afbaa32ec4783a407 status=SHIPPING
+2026-04-13T00:38:19.156+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=33dc45ede7ee4a568cd7 userId=GUEST
+2026-04-13T00:38:19.158+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=33dc45ede7ee4a568cd7 status=PAID
+2026-04-13T00:38:19.160+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=5932917daa27413a8cc3 userId=GUEST
+2026-04-13T00:38:19.163+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=5a4aaf58bd3c481f9044 userId=test
+2026-04-13T00:38:19.165+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=5a4aaf58bd3c481f9044 status=PAID
+2026-04-13T00:38:19.168+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=5a4aaf58bd3c481f9044 status=SHIPPING
+2026-04-13T00:38:19.169+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=5a4aaf58bd3c481f9044 status=DELIVERED
+2026-04-13T00:38:19.172+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=ad56edb0923e4f798d75 userId=test
+2026-04-13T00:38:19.174+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=ad56edb0923e4f798d75 status=PAID
+2026-04-13T00:38:19.176+09:00  INFO 86676 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=5022854c60ce40f996ba userId=GUEST
+2026-04-13T00:38:19.177+09:00  INFO 86676 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 주문 12건 생성 완료
+2026-04-13T00:38:21.771+09:00  INFO 86676 --- [apex] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T00:38:21.772+09:00  INFO 86676 --- [apex] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T00:38:21.773+09:00  INFO 86676 --- [apex] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-13T00:40:05.631+09:00  INFO 86676 --- [apex] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-13T00:40:05.637+09:00  INFO 86676 --- [apex] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-13T00:40:05.652+09:00  INFO 86676 --- [apex] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T00:40:05.654+09:00  INFO 86676 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T00:40:05.655+09:00  INFO 86676 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T00:40:10.003+09:00  INFO 87220 --- [apex] [main] com.gusa.apex.ApexApplication            : Starting ApexApplication using Java 21.0.10 with PID 87220 (/Users/del_mc/Documents/project_01/gusa/apex/build/classes/java/main started by del_mc in /Users/del_mc/Documents/project_01/gusa/apex)
+2026-04-13T00:40:10.004+09:00 DEBUG 87220 --- [apex] [main] com.gusa.apex.ApexApplication            : Running with Spring Boot v4.0.4, Spring v7.0.6
+2026-04-13T00:40:10.005+09:00  INFO 87220 --- [apex] [main] com.gusa.apex.ApexApplication            : The following 1 profile is active: "dev"
+2026-04-13T00:40:10.385+09:00  INFO 87220 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T00:40:10.463+09:00  INFO 87220 --- [apex] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 6 JPA repository interfaces.
+2026-04-13T00:40:10.763+09:00  INFO 87220 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-13T00:40:10.770+09:00  INFO 87220 --- [apex] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T00:40:10.770+09:00  INFO 87220 --- [apex] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-13T00:40:10.796+09:00  INFO 87220 --- [apex] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 770 ms
+2026-04-13T00:40:10.882+09:00  INFO 87220 --- [apex] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-13T00:40:10.908+09:00  INFO 87220 --- [apex] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-13T00:40:11.108+09:00  INFO 87220 --- [apex] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T00:40:11.124+09:00  INFO 87220 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T00:40:11.200+09:00  INFO 87220 --- [apex] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:gusa-dev user=SA
+2026-04-13T00:40:11.200+09:00  INFO 87220 --- [apex] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T00:40:11.226+09:00  INFO 87220 --- [apex] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:gusa-dev]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: GUSA-DEV/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-13T00:40:11.781+09:00  INFO 87220 --- [apex] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T00:40:11.783+09:00  INFO 87220 --- [apex] [main] org.hibernate.orm.jdbc.batch             : HHH100501: Automatic JDBC statement batching enabled (maximum batch size 20)
+2026-04-13T00:40:11.821+09:00  INFO 87220 --- [apex] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T00:40:11.858+09:00  INFO 87220 --- [apex] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-13T00:40:12.463+09:00 DEBUG 87220 --- [apex] [main] com.gusa.apex.security.jwt.JwtFilter     : Filter 'jwtFilter' configured for use
+2026-04-13T00:40:12.494+09:00  INFO 87220 --- [apex] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+2026-04-13T00:40:13.021+09:00  INFO 87220 --- [apex] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T00:40:13.026+09:00  INFO 87220 --- [apex] [main] com.gusa.apex.ApexApplication            : Started ApexApplication in 3.248 seconds (process running for 3.447)
+2026-04-13T00:40:13.196+09:00  INFO 87220 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 관리자 계정 생성 완료 — ID: admin / PW: admin1234
+2026-04-13T00:40:13.278+09:00  INFO 87220 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 테스트 계정 생성 완료 — ID: admin / PW: test1234
+2026-04-13T00:40:13.392+09:00  INFO 87220 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 회원 10 명 생성 완료
+2026-04-13T00:40:13.403+09:00  INFO 87220 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 상품 15개 등록 완료
+2026-04-13T00:40:13.423+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=6daf7846046e4dc8807d userId=test
+2026-04-13T00:40:13.432+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=6daf7846046e4dc8807d status=PAID
+2026-04-13T00:40:13.437+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=6daf7846046e4dc8807d status=SHIPPING
+2026-04-13T00:40:13.439+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=6daf7846046e4dc8807d status=DELIVERED
+2026-04-13T00:40:13.443+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=0987696675204b6ea5b3 userId=test
+2026-04-13T00:40:13.445+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=0987696675204b6ea5b3 status=PAID
+2026-04-13T00:40:13.448+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=0987696675204b6ea5b3 status=SHIPPING
+2026-04-13T00:40:13.451+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=33d93d092f704100a6d6 userId=test
+2026-04-13T00:40:13.452+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=33d93d092f704100a6d6 status=PAID
+2026-04-13T00:40:13.455+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=25a9fb361ffc448d9008 userId=test
+2026-04-13T00:40:13.457+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=379d05cd1059403188a5 userId=test
+2026-04-13T00:40:13.459+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=379d05cd1059403188a5 status=CANCELED
+2026-04-13T00:40:13.461+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=fb78cb48ebec44b0b9e7 userId=GUEST
+2026-04-13T00:40:13.463+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=fb78cb48ebec44b0b9e7 status=PAID
+2026-04-13T00:40:13.465+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=fb78cb48ebec44b0b9e7 status=SHIPPING
+2026-04-13T00:40:13.467+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=fb78cb48ebec44b0b9e7 status=DELIVERED
+2026-04-13T00:40:13.470+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=a6851b0e26d945e78b21 userId=GUEST
+2026-04-13T00:40:13.471+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=a6851b0e26d945e78b21 status=PAID
+2026-04-13T00:40:13.473+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=a6851b0e26d945e78b21 status=SHIPPING
+2026-04-13T00:40:13.475+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=d34c8fa63db046239456 userId=GUEST
+2026-04-13T00:40:13.476+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=d34c8fa63db046239456 status=PAID
+2026-04-13T00:40:13.480+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=0dc29f4e0588449581c0 userId=GUEST
+2026-04-13T00:40:13.482+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=74f0787293c44ef4b390 userId=test
+2026-04-13T00:40:13.484+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=74f0787293c44ef4b390 status=PAID
+2026-04-13T00:40:13.486+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=74f0787293c44ef4b390 status=SHIPPING
+2026-04-13T00:40:13.488+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=74f0787293c44ef4b390 status=DELIVERED
+2026-04-13T00:40:13.490+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=cba81088529241df9512 userId=test
+2026-04-13T00:40:13.491+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 상태 변경 orderId=cba81088529241df9512 status=PAID
+2026-04-13T00:40:13.494+09:00  INFO 87220 --- [apex] [main] c.g.a.d.order.service.OrderServiceImpl   : [Order] 주문 생성 orderId=8c90d749f1ed4bb8b0f4 userId=GUEST
+2026-04-13T00:40:13.496+09:00  INFO 87220 --- [apex] [main] c.g.apex.global.config.DataInitializer   : [DataInitializer] 샘플 주문 12건 생성 완료
+2026-04-13T00:40:26.925+09:00  INFO 87220 --- [apex] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T00:40:26.926+09:00  INFO 87220 --- [apex] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T00:40:26.927+09:00  INFO 87220 --- [apex] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-13T01:10:39.662+09:00  INFO 87220 --- [apex] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-13T01:10:39.669+09:00  INFO 87220 --- [apex] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-13T01:10:39.684+09:00  INFO 87220 --- [apex] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T01:10:39.686+09:00  INFO 87220 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T01:10:39.686+09:00  INFO 87220 --- [apex] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
