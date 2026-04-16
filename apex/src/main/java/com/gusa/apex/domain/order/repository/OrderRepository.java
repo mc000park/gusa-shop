@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
@@ -39,4 +41,32 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
             @Param("status") String status,
             Pageable pageable
     );
+
+    /** 특정 기간 주문 수 */
+    long countByCreatedAtBetween(LocalDateTime from, LocalDateTime to);
+
+    /** 특정 기간 + 상태별 매출 합계 */
+    @Query("SELECT COALESCE(SUM(o.finalAmount), 0) FROM Order o WHERE o.createdAt BETWEEN :from AND :to AND o.status IN ('PAID', 'DELIVERED', 'SHIPPING')")
+    long sumRevenueByPeriod(@Param("from") LocalDateTime from, @Param("to") LocalDateTime to);
+
+    /** 특정 연도의 월별 학년별 판매량 */
+    @Query(value = """
+        SELECT
+          MONTH(o.created_at) AS month,
+          CASE
+            WHEN p.grade LIKE '초등%' THEN '초등'
+            WHEN p.grade LIKE '중등%' THEN '중등'
+            WHEN p.grade LIKE '고등%' THEN '고등'
+            ELSE '기타'
+          END AS grade_category,
+          COALESCE(SUM(oi.quantity), 0) AS quantity
+        FROM orders o
+        JOIN order_items oi ON oi.order_id = o.id
+        JOIN products p ON p.id = oi.product_id
+        WHERE YEAR(o.created_at) = :year
+          AND o.status IN ('PAID', 'DELIVERED', 'SHIPPING')
+        GROUP BY month, grade_category
+        ORDER BY month
+        """, nativeQuery = true)
+    List<Object[]> findMonthlyGradeSales(@Param("year") int year);
 }

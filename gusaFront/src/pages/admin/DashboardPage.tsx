@@ -1,57 +1,39 @@
-const months = [
-  '1월',
-  '2월',
-  '3월',
-  '4월',
-  '5월',
-  '6월',
-  '7월',
-  '8월',
-  '9월',
-  '10월',
-  '11월',
-  '12월',
+import { useEffect, useState } from 'react';
+import { fetchDashboardStats } from '../../api/dashboard';
+import type { DashboardStats } from '../../types/dashboard';
+
+const MONTHS = [
+  '1월', '2월', '3월', '4월', '5월', '6월',
+  '7월', '8월', '9월', '10월', '11월', '12월',
 ];
 
-const series = [
-  {
-    name: '초등',
-    color: '#3b82f6',
-    data: [210, 245, 310, 380, 290, 260, 230, 320, 410, 360, 280, 240],
-  },
-  {
-    name: '중등',
-    color: '#8b5cf6',
-    data: [150, 180, 230, 280, 220, 200, 180, 250, 310, 270, 210, 180],
-  },
-  {
-    name: '고등',
-    color: '#ef4444',
-    data: [120, 140, 190, 240, 180, 160, 140, 200, 270, 230, 170, 150],
-  },
+const GRADE_SERIES = [
+  { name: '초등', color: '#3b82f6' },
+  { name: '중등', color: '#8b5cf6' },
+  { name: '고등', color: '#ef4444' },
 ];
 
-const stats = [
-  {
-    label: '오늘 방문자',
-    value: '1,284',
-    change: '+12.3%',
-    up: true,
-    icon: '',
-  },
-  { label: '오늘 로그인', value: '342', change: '+8.1%', up: true, icon: '' },
-  { label: '오늘 주문', value: '87', change: '-3.2%', up: false, icon: '' },
-  {
-    label: '이번달 매출',
-    value: '42,000원',
-    change: '+18.5%',
-    up: true,
-    icon: '',
-  },
-];
+function buildSeriesData(
+  monthlyGradeSales: DashboardStats['monthlyGradeSales'],
+): { name: string; color: string; data: number[] }[] {
+  return GRADE_SERIES.map(({ name, color }) => {
+    const data = Array.from({ length: 12 }, (_, i) => {
+      const month = i + 1;
+      const found = monthlyGradeSales.find(
+        (r) => r.month === month && r.gradeCategory === name,
+      );
+      return found ? found.quantity : 0;
+    });
+    return { name, color, data };
+  });
+}
 
 /* ── 순수 SVG 꺾은선 차트 ── */
-const LineChart = () => {
+const LineChart = ({
+  series,
+}: {
+  series: { name: string; color: string; data: number[] }[];
+}) => {
   const W = 540;
   const H = 260;
   const PAD = { top: 20, right: 20, bottom: 36, left: 44 };
@@ -59,9 +41,9 @@ const LineChart = () => {
   const innerH = H - PAD.top - PAD.bottom;
 
   const allValues = series.flatMap((s) => s.data);
-  const maxVal = Math.max(...allValues);
+  const maxVal = Math.max(...allValues, 1);
 
-  const xStep = innerW / (months.length - 1);
+  const xStep = innerW / (MONTHS.length - 1);
   const yScale = (v: number) => innerH - (v / maxVal) * innerH;
 
   const points = (data: number[]) =>
@@ -69,11 +51,13 @@ const LineChart = () => {
       .map((v, i) => `${PAD.left + i * xStep},${PAD.top + yScale(v)}`)
       .join(' ');
 
-  const yTicks = [0, 100, 200, 300, 400].filter((v) => v <= maxVal + 50);
+  const tickMax = Math.ceil(maxVal / 100) * 100;
+  const yTicks = [0, tickMax * 0.25, tickMax * 0.5, tickMax * 0.75, tickMax]
+    .map(Math.round)
+    .filter((v, i, arr) => arr.indexOf(v) === i);
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: 'auto' }}>
-      {/* y 격자 */}
       {yTicks.map((v) => {
         const y = PAD.top + yScale(v);
         return (
@@ -99,8 +83,7 @@ const LineChart = () => {
         );
       })}
 
-      {/* x 레이블 */}
-      {months.map((m, i) => (
+      {MONTHS.map((m, i) => (
         <text
           key={m}
           x={PAD.left + i * xStep}
@@ -113,7 +96,6 @@ const LineChart = () => {
         </text>
       ))}
 
-      {/* 시리즈 */}
       {series.map((s) => (
         <g key={s.name}>
           <polyline
@@ -140,38 +122,66 @@ const LineChart = () => {
 };
 
 const DashboardPage = () => {
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchDashboardStats()
+      .then(setStats)
+      .catch(() => setError('통계 데이터를 불러오지 못했습니다.'))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const statCards = stats
+    ? [
+        {
+          label: '오늘 주문',
+          value: stats.todayOrderCount.toLocaleString() + '건',
+        },
+        {
+          label: '이번달 매출',
+          value: stats.monthlyRevenue.toLocaleString() + '원',
+        },
+        {
+          label: '총 회원 수',
+          value: stats.totalUsers.toLocaleString() + '명',
+        },
+        {
+          label: '총 상품 수',
+          value: stats.totalProducts.toLocaleString() + '종',
+        },
+      ]
+    : [];
+
+  const series = stats ? buildSeriesData(stats.monthlyGradeSales) : [];
+
+  if (loading) {
+    return <div style={{ padding: 32, color: '#94a3b8' }}>불러오는 중...</div>;
+  }
+
+  if (error) {
+    return <div style={{ padding: 32, color: '#ef4444' }}>{error}</div>;
+  }
+
   return (
     <div>
       {/* 통계 카드 */}
       <div className="dash-stats">
-        {stats.map((s) => (
+        {statCards.map((s) => (
           <div key={s.label} className="stat-card">
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-              }}
-            >
-              <div className="stat-card-label">{s.label}</div>
-              <span style={{ fontSize: 22 }}>{s.icon}</span>
-            </div>
+            <div className="stat-card-label">{s.label}</div>
             <div className="stat-card-value">{s.value}</div>
-            <div className={`stat-card-change ${s.up ? 'up' : 'down'}`}>
-              {s.up ? '▲' : '▼'} {s.change} 전일 대비
-            </div>
           </div>
         ))}
       </div>
 
-      {/* 차트 + 금일 로그인 */}
+      {/* 차트 */}
       <div className="dash-charts">
-        {/* SVG 꺾은선 차트 */}
         <div className="chart-card">
-          <p className="chart-card-title">학년별 교재 구매 현황</p>
-          {/* 범례 */}
+          <p className="chart-card-title">학년별 교재 구매 현황 (올해)</p>
           <div style={{ display: 'flex', gap: 20, marginBottom: 12 }}>
-            {series.map((s) => (
+            {GRADE_SERIES.map((s) => (
               <div
                 key={s.name}
                 style={{ display: 'flex', alignItems: 'center', gap: 6 }}
@@ -189,7 +199,7 @@ const DashboardPage = () => {
               </div>
             ))}
           </div>
-          <LineChart />
+          <LineChart series={series} />
         </div>
       </div>
     </div>
